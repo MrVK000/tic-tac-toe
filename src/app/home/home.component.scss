@@ -1,0 +1,16 @@
+.common {
+  display: flex;
+  justify-content: center;
+}
+
+.main {
+  height: auto;
+  padding: 4em;
+  flex-direction: column;
+}
+
+.cell {
+  grid-template-columns: repeat(3, 5%);
+  grid-template-rows: repeat(3, 5%);
+  border: 1px solid black;
+}

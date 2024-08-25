@@ -1,0 +1,34 @@
+<div style="height: 100vh;width: 100%;" class="common ">
+  <div class="main container-fluid common p-0 " style="width: 20em;">
+
+
+    <div class="rounded p-3" style="background-color: rgb(52, 52, 52);">
+      <div class="common m-3 rounded" style="background-color: white;">
+        <label class="fs-1">TIC TAC TOE</label>
+      </div>
+
+      <div *ngIf="xWin === true || oWin === true || matchDraw === true" class="common m-3 rounded"
+        style="background-color: white;">
+        <label *ngIf="xWin === true" class="fs-1" style="color: red;">X win</label>
+        <label *ngIf="oWin === true" class="fs-1" style="color: green;">O win</label>
+        <label *ngIf="matchDraw === true" class="fs-1" style="color: orange;">Match draw</label>
+      </div>
+
+      <div class="common">
+        <div class="rounded"
+          style="display: grid; grid-template-columns: repeat(3, 33.3%);grid-template-rows: repeat(3, 33.3%);background-color: rgb(52, 52, 52); width: 70%;">
+          <ng-container *ngFor="let singleArray of displayArray;let i=index">
+            <div style="background-color: white;" class="btn cell text-center fs-1 pt-2"
+              *ngFor="let element of singleArray;let j=index" (click)="clickFunc(i,j)"
+              [ngStyle]="{'color':(bgColorArray[i][j]===true)?'black':'white'}">{{element}}</div>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="m-5 common ">
+        <button class="btn btn-primary fs-3 p-3" (click)="arrayCreateFunc()">New Game</button>
+      </div>
+    </div>
+
+  </div>
+</div>
