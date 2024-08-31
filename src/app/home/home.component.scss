@@ -7,10 +7,24 @@
   height: auto;
   padding: 4em;
   flex-direction: column;
+  width: 20em;
+}
+
+.contentWrapper {
+  background-color: rgb(52, 52, 52);
 }
 
 .cell {
   grid-template-columns: repeat(3, 5%);
   grid-template-rows: repeat(3, 5%);
   border: 1px solid black;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+  .main {
+    width: 15em;
+  }
 }
